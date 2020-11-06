@@ -7,3 +7,21 @@ By starting with 1 and 2, the first 10 terms will be:
 By considering the terms in the Fibonacci sequence whose values do not exceed four million,
 find the sum of the even-valued terms.
 """
+
+
+def fiabonacci():
+    a = 1
+    b = 2
+    d = 0
+    for x in range(2, int(100)):
+        if b % 2 == 0:
+            d += b
+        c = a
+        a = b
+        b += c
+        if b >= 4e6:
+            break
+    return d
+
+
+print(fiabonacci())

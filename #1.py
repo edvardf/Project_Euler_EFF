@@ -13,4 +13,5 @@ def sum_multiples(a, b, stop):
             i += x
     return i
 
+
 print(sum_multiples(3, 5, 1000))
