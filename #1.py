@@ -6,13 +6,11 @@ Find the sum of all the multiples of 3 or 5 below 1000.
 """
 
 
-def sum_multiples(m):
-    a = 0
-    for x in range(1, 1000):
-        if x % m == 0:
-            a += x
-    return a
+def sum_multiples(a, b, stop):
+    i = 0
+    for x in range(1, stop):
+        if x % a == 0 or x % b == 0:
+            i += x
+    return i
 
-
-print(sum_multiples(3), "+", sum_multiples(5), "-", sum_multiples(15), "=")
-print("Ans = ", sum_multiples(3) + sum_multiples(5) - sum_multiples(15))
+print(sum_multiples(3, 5, 1000))
