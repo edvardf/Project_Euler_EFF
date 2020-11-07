@@ -12,5 +12,5 @@ while num > 1:
         num //= fac
     else:
         fac += 1
-        
+
 print(fac)
