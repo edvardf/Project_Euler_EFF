@@ -10,18 +10,13 @@ find the sum of the even-valued terms.
 
 
 def fiabonacci():
-    a = 1
-    b = 2
-    d = 0
-    for x in range(2, int(100)):
-        if b % 2 == 0:
-            d += b
-        c = a
-        a = b
-        b += c
-        if b >= 4e6:
-            break
-    return d
+    f1, f2 = 0, 1
+    sum_ = 0
+    while f2 < 4e6:
+        if f2 % 2 == 0:
+            sum_ += f2
+        f1, f2 = f2, f1 + f2
+    return sum_
 
 
 print(fiabonacci())
