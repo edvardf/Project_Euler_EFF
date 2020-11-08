@@ -15,7 +15,6 @@ while len(primes) < 10001:
             break
     if is_p:
         primes.append(i)
-    else:
-        i += 1
+    i += 2
 
 print(primes[-1])
