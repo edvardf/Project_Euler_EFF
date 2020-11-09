@@ -8,7 +8,7 @@ num = 600851475143
 fac = 2
 
 while num > 1:
-    if (num % fac == 0):
+    if num % fac == 0:
         num //= fac
     else:
         fac += 1

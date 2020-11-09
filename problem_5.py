@@ -9,7 +9,7 @@ from __future__ import annotations
 from sys import argv
 
 
-def primes_less_than(n : int) -> list[int]:
+def primes_less_than(n: int) -> list[int]:
     primes = list()
     for i in range(2, n + 1):
         prime = True
