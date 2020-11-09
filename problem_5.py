@@ -38,6 +38,6 @@ for i, prime in enumerate(primes):
 num = 1
 
 for b, e in zip(primes, powers):
-    num *= b ** e
+    num *= b**e
 
 print(num)
