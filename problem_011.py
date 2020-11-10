@@ -70,8 +70,8 @@ for x in num_grid:
 def greatest_product_4_adj_num(number_grid):
     product = 1
     # horizontally
-    for a in range(20):
-        for b in range(17):
+    for a in range(len(number_grid)):
+        for b in range(len(number_grid)-3):
             factors = number_grid[a][b:b+4]
             p = 1
             for fac in factors:
@@ -79,8 +79,8 @@ def greatest_product_4_adj_num(number_grid):
             if p > product:
                 product = p
     # vertically
-    for a in range(20):
-        for b in range(17):
+    for a in range(len(number_grid)):
+        for b in range(len(number_grid)-3):
             factors = [number_grid[b][a], number_grid[b+1][a], number_grid[b+2][a], number_grid[b+3][a]]
             p = 1
             for fac in factors:
@@ -88,8 +88,8 @@ def greatest_product_4_adj_num(number_grid):
             if p > product:
                 product = p
     # diagonally from top left to bottom right
-    for a in range(17):
-        for b in range(17):
+    for a in range(len(number_grid)-3):
+        for b in range(len(number_grid)-3):
             factors = [number_grid[a][b], number_grid[a+1][b+1], number_grid[a+2][b+2], number_grid[a+3][b+3]]
             p = 1
             for fac in factors:
@@ -97,8 +97,8 @@ def greatest_product_4_adj_num(number_grid):
             if p > product:
                 product = p
     # diagonally from bottom left to top right
-    for a in range(17):
-        for b in range(17):
+    for a in range(len(number_grid)-3):
+        for b in range(len(number_grid)-3):
             factors = [number_grid[a+3][b], number_grid[a+2][b+1], number_grid[a+1][b+2], number_grid[a][b+3]]
             p = 1
             for fac in factors:
