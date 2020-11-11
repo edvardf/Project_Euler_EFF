@@ -18,23 +18,20 @@ We can see that 28 is the first triangle number to have over five divisors.
 What is the value of the first triangle number to have over five hundred divisors?
 """
 
-max_fac = 0
-tri_nums = list()
 i = 2
-fac = 0
-while fac < 500:
-    fac = 0
+factors = 0
+while factors < 500:
+    factors = 0
     tri_num = 0
+    j = 1
     for num in range(i):
         tri_num += num
-    i += 1
-    j = 1
     while j * j <= tri_num:
         if tri_num % j == 0:
-            fac += 1
+            factors += 1
             if tri_num // j != j:
-                fac += 1
+                factors += 1
         j += 1
-    if fac > max_fac:
-        max_fac = fac
-        print(tri_num, fac)
+    i += 1
+
+print("The triangle number", tri_num, "has", factors, "factors.")
