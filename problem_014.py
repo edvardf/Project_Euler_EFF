@@ -18,7 +18,7 @@ num_w_longest_chain = 0
 max_steps = 0
 for n in range(1, 1000000):
     if n % 1e4 == 0:
-        print(n//1e3, "% done")
+        print(n//1e4, "% done")
     m = n
     steps = 1
     while n > 1:
