@@ -45,6 +45,7 @@ num = ("""
 63 66 04 68 89 53 67 30 73 16 69 87 40 31
 04 62 98 27 23 09 70 98 73 93 38 53 60 04 23
 """)
+
 x = 1
 num_g = [0 for _ in range(15)]
 for i in range(15):
@@ -53,9 +54,16 @@ for i in range(15):
         num_g[i][j] = int(num[x:x+2])
         x += 3
 
+l = [0 for _ in range(15)]
+y = 1
 for i in num_g:
-    print(i)
+    for j in range(y):
+        print(i[j])
+    y += 1
 
+
+
+"""
 sum_tri = 0
 index = 0
 for i in range(15):
@@ -68,3 +76,4 @@ for i in range(15):
         sum_tri += num_g[i][index]
 
 print(sum_tri)
+"""
