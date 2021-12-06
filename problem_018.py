@@ -54,26 +54,21 @@ for i in range(15):
         num_g[i][j] = int(num[x:x+2])
         x += 3
 
-l = [0 for _ in range(15)]
-y = 1
-for i in num_g:
-    for j in range(y):
-        print(i[j])
-    y += 1
+print(len(num_g[-1]))
+print("")
 
-
-
-"""
-sum_tri = 0
-index = 0
-for i in range(15):
-    if i == 0:
-        sum_tri += num_g[0][index]
-    elif num_g[i][index] < num_g[i][index+1]:
-        sum_tri += num_g[i][index+1]
-        index += 1
+for y in range(len(num_g[-2])):
+    if num_g[-1][y] < num_g[-1][y+1]:
+        print(num_g[-2][y])
+        num_g[-2][y] += num_g[-1][y+1]
+        print(num_g[-1][y+1])
+        print(num_g[-2][y])
+        print("")
     else:
-        sum_tri += num_g[i][index]
+        print(num_g[-2][y])
+        num_g[-2][y] += num_g[-1][y]
+        print(num_g[-1][y])
+        print(num_g[-2][y])
+        print("")
 
-print(sum_tri)
-"""
+print(num_g)
