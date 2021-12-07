@@ -54,21 +54,14 @@ for i in range(15):
         num_g[i][j] = int(num[x:x+2])
         x += 3
 
-print(len(num_g[-1]))
-print("")
-
-for y in range(len(num_g[-2])):
-    if num_g[-1][y] < num_g[-1][y+1]:
-        print(num_g[-2][y])
-        num_g[-2][y] += num_g[-1][y+1]
-        print(num_g[-1][y+1])
-        print(num_g[-2][y])
-        print("")
-    else:
-        print(num_g[-2][y])
-        num_g[-2][y] += num_g[-1][y]
-        print(num_g[-1][y])
-        print(num_g[-2][y])
-        print("")
+z = 0
+while z < 14:
+    for y in range(len(num_g[-2])):
+        if num_g[-1][y] < num_g[-1][y+1]:
+            num_g[-2][y] += num_g[-1][y+1]
+        else:
+            num_g[-2][y] += num_g[-1][y]
+    num_g.pop(-1)
+    z += 1
 
 print(num_g)
