@@ -54,8 +54,8 @@ for i in range(15):
         num_g[i][j] = int(num[x:x+2])
         x += 3
 
-z = 0
-while z < 14:
+z = 1
+while z < 15:
     for y in range(len(num_g[-2])):
         if num_g[-1][y] < num_g[-1][y+1]:
             num_g[-2][y] += num_g[-1][y+1]
