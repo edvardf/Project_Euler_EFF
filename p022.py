@@ -1,5 +1,6 @@
 """
-Using names.txt (right click and 'Save Link/Target As...'), a 46K text file containing over five-thousand first names,
+Using names.txt (right click and 'Save Link/Target As...'),
+a 46K text file containing over five-thousand first names,
 begin by sorting it into alphabetical order. Then working out the alphabetical value for each name,
 multiply this value by its alphabetical position in the list to obtain a name score.
 
@@ -10,8 +11,22 @@ So, COLIN would obtain a score of 938 × 53 = 49714.
 What is the total of all the name scores in the file?
 """
 
-f = open("p022_names.txt", "r")
-r_names = list(f.read())
-f.close()
 
-print(r_names[3])
+names = []
+
+with open("p022_names.txt", "r") as fp:
+    contents = fp.read()
+    for name in contents.split(','):
+        names.append(name.strip('"'))
+    names.sort()
+
+sum_ = 0
+
+for i in range(len(names)):
+    name = names[i]
+    x = 0
+    for j in range(len(name)):
+        x += ord(name[j])-64
+    sum_ += x * (i+1)
+
+print(sum_)
