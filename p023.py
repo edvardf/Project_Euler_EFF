@@ -32,5 +32,51 @@ def ab_nums(stop):
     return nums
 
 
-ab = ab_nums(28123)
+def binary_search(n, l):
+    c = 1
+    k = 1
+    while True:
+        c += 1
+        if n < l[floor(len(l)*((2**c-2**k+1)/(2**c)))]:
+            k += 1
+        if n == l[floor(len(l)*((2**c-2**k+1)/(2**c)))]:
+            return floor(len(l)*((2**c-2**k+1)/(2**c)))
+
+
+
 s = 0
+ab = ab_nums(28123)
+
+for i in range(28123+1):
+    check = False
+    for j in ab:
+        if i/2 < j:
+            break
+        s1 = i - j
+
+    if not check:
+        s += i
+
+"""
+for i in range(28123+1):
+    if i/2 < ab[0]:
+        s += i
+    else:
+        check = False
+        for j in ab:
+            if i/2 < j or check:
+                break
+            else:
+                s1 = i - j
+                s2 = -s1
+                for k in range(1, floor(sqrt(s1)) + 1):
+                    if k*k == s1:
+                        s2 -= k
+                    if s1 % k == 0:
+                        s2 += k + s1/k
+                    if s1 < s2:
+                        check = True
+        if not check:
+            s += i
+print(s)
+"""
