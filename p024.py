@@ -35,4 +35,4 @@ c = len(ans) - 1
 for _ in ans:
     x += 10 ** c * _
     c -= 1
-print(x, ans)
+print(x)

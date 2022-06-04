@@ -14,14 +14,11 @@ Where 0.1(6) means 0.166666..., and has a 1-digit recurring cycle. It can be see
 
 Find the value of d < 1000 for which 1/d contains the longest recurring cycle in its decimal fraction part.
 """
-
-from unicodedata import decimal
-
-
 def longest_recurring_cycle(max: int):
     for d in range(2, 10):
-        fraction = decimal(1e30 / d)
+        fraction = 1 / d
         print(fraction)
+        
 
 
 longest_recurring_cycle(1000)
