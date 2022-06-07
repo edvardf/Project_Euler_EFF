@@ -14,11 +14,19 @@ Where 0.1(6) means 0.166666..., and has a 1-digit recurring cycle. It can be see
 
 Find the value of d < 1000 for which 1/d contains the longest recurring cycle in its decimal fraction part.
 """
+from math import floor
+
+
 def longest_recurring_cycle(max: int):
-    for d in range(2, 10):
+    for d in range(2, max):
         fraction = 1 / d
-        print(fraction)
-        
+        power = 1
+        while True:
+            digit = floor(fraction * 10**power-10**(power-1))
+            print(digit)
+            power += 1
+            if power > 20:
+                break
 
 
-longest_recurring_cycle(1000)
+longest_recurring_cycle(10)
