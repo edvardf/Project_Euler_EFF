@@ -5,7 +5,7 @@ from p005 import primes
 quad_list = []
 for a in range(-999, 1000, 2):
     for b in primes(1000):
-        if a > -b:  # quad-formula must be greater than 0 give a > -b
+        if a > -b:  # quad-formula must be greater than 0 gives a > -b
             quad_list.append([a, b])
         if a > b:
             quad_list.append([a, -b])
