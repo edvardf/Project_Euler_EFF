@@ -14,44 +14,24 @@ Where 0.1(6) means 0.166666..., and has a 1-digit recurring cycle. It can be see
 
 Find the value of d < 1000 for which 1/d contains the longest recurring cycle in its decimal fraction part.
 """
-from math import floor
 
 
-def digits_unit_fraction(max: int):
-    frac_list = []
-    for d in range(2, max):
-        fraction = 1 / d
-        power = 1
-        prev_num = []
-        digits = []
-        while True:
-            digit = floor(fraction * 10**power)
-            power2 = len(prev_num)
-            for i in range(len(prev_num)):
-                digit -= prev_num[i] * 10**power2
-                power2 -= 1
-            digits.append(digit)
-            prev_num.append(digit)
-            power += 1
-            if power > 16:
-                break
-        frac_list.append(digits)
-    return frac_list
+def lenRecurCycle(d: int):
+    restSet = set()
+    rest = 1
+    while rest != 0:
+        while rest < d:
+            rest *= 10
+        temp = rest // d
+        rest -= temp * d
+        if rest in restSet:
+            return len(restSet)
+        restSet.add(rest)
+    return 0
 
 
-def reccuring_cycle_len(digits: list):
-    l = len(digits)
-    for i in range(l):
-        for j in range(l):
-            if i + j > l:
-                break
-            cycle = digits[i : i + j]
-            k = len(cycle)
-            if i + j + k > l:
-                break
-            if cycle == digits[i + k : i + j + k]:
-                return k
-
-
-for i in digits_unit_fraction(10):
-    print(reccuring_cycle_len(i))
+bestDenom = 1
+for denom in range(2, 1000):
+    if lenRecurCycle(bestDenom) < lenRecurCycle(denom):
+        bestDenom = denom
+print(bestDenom)
